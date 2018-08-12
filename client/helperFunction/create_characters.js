@@ -2,6 +2,7 @@
 
 //WARRIOR CONSTRUCTOR FUNCTION - CHARACTER TYPE
 export function Warrior(name = "name", strength = 1, level = 1, vitality = 1, armor="none") {
+  this.type = "warrior"
   this.name = name
   this.strength = strength;
   this.level = level;
@@ -25,7 +26,7 @@ Warrior.prototype.attack = function (charLevel, weapon, wepDamage, char_str, wep
   let elemPCT = (Number(wepElemPct) / 100)
   let weaponAPS = 1
   if ((level > 90 || level < 1) || (wepDamage[0] > wepDamage[1]) || (elemPCT > .15) || (elemPCT < .05 && elemPCT > 0) || (elemPCT < 0)) {
-    return "Wrong input data! Try again."
+    return "ERROR: Check input data parameters. You may be outside the allowed range."
   }
   for (let key in weaponData) {
     if (key === weapon) {
@@ -62,5 +63,9 @@ Warrior.prototype.levelUp = function () {
   this.level += 1;
   this.strength += 10;
   this.vitality += 5
+  if (level > 90) {
+    this.level = 90;
+    return "Max Level Attained"
+  }
 }
 

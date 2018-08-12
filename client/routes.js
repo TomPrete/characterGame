@@ -13,7 +13,7 @@ class Routes extends Component {
     return (
       <div className="Game">
       <header className="Game-header">
-        <h1 className="Game-title">Welcome to CopyCat Gaming Attack Calculator</h1>
+        <h1 className="Game-title">Majestic CopyCat Gaming Attack Calculator</h1>
       </header>
       <BrowserRouter>
         <Switch>
