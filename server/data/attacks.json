@@ -1,0 +1,17 @@
+{
+  "punch": {
+    "percAPS": 1,
+    "percDMG": 1,
+    "elem": "physical"
+  },
+  "smite": {
+    "percAPS": 1.2,
+    "percDMG": 0.9,
+    "elem": "fire"
+  },
+  "cleave": {
+    "percAPS": 0.9,
+    "percDMG": 1.2,
+    "elem": "cold"
+  }
+}
