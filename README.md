@@ -32,6 +32,8 @@ I then deleted most of the unnecessary dependencies.
 npm install
 
 npm run start
+or
+npm run start-dev
 
 
 
