@@ -15,7 +15,7 @@ I created a Warrior constructor function that takes in arguments defined when in
 
 The Attack Method takes in numerous input arguments, tests to ensure the inputs meet each input specification, and returns an object of the different Attacks along with the Min, Max, and Avg.DPS.
 
-The LevelUp Method increases the specific Character's level, strength, and vitality. Each Character Type will have a unique LevelUp method since leveling up my impact each Character Type differently.
+The LevelUp Method increases the specific Character's level, strength, and vitality. Each Character Type will have a unique LevelUp method since leveling up may impact each Character Type differently.
 
 ## (helper_functions.js)
 
