@@ -19,7 +19,7 @@ The LevelUp Method increases the specific Character's level, strength, and vital
 
 ## (helper_functions.js)
 
-The 'testAttackData' function is specifically used to to test the attack data of a Character who hasn't yet been officially created. In future iterations of this application a user will already have created a Character and that Character will be stored in state/store so we don't have to create a Warrior/CharacterClass everytime we need to test that character's attack statistics.
+The 'testAttackData' function is specifically used to to test the attack data of a Character who hasn't yet been officially created. In future iterations of this application a user will already have created a Character and that Character will be stored in state/store so we don't have to create a new Warrior/CharacterClass everytime we need to test that specific character's attack statistics.
 
 ## Files Structure
 
