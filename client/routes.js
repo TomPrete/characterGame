@@ -17,7 +17,7 @@ class Routes extends Component {
       </header>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Game} something={this.props}/>
+          <Route path="/" component={Game} />
           {/*
             Put additional routes here.
           */}

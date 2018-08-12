@@ -1,7 +1,7 @@
 {
-  "name": "copycatredux",
+  "name": "copycatgaming",
   "version": "1.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "copycat gaming attack calculator",
   "engines": {
     "node": ">= 7.0.0"
   },
@@ -10,9 +10,10 @@
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "start": "node server",
-    "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start"
+    "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start",
+    "test": "NODE_ENV='test' mocha ./server/**/*.spec.js ./server/**/**/*.spec.js ./client/**/*.spec.js"
   },
-  "author": "Fullstack Academy of Code",
+  "author": "tomprete",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
@@ -44,6 +45,9 @@
     "@babel/register": "^7.0.0-beta.55",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta.4",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.3",
     "redux-devtools-extension": "^2.13.5",
     "webpack": "^4.16.4",
