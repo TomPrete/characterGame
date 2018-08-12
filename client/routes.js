@@ -11,6 +11,10 @@ class Routes extends Component {
   render() {
     // console.log(this.props.characters)
     return (
+      <div className="Game">
+      <header className="Game-header">
+        <h1 className="Game-title">Welcome to CopyCat Gaming Attack Calculator</h1>
+      </header>
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Game} something={this.props}/>
@@ -19,6 +23,7 @@ class Routes extends Component {
           */}
         </Switch>
       </BrowserRouter>
+      </div>
     )
   }
 }

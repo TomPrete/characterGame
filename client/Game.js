@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { testAttackData, createNewCharacter } from "./helperFunction/front_functions.js"
+import { testAttackData, createNewCharacter } from "./helperFunction/helper_functions.js"
 import store, {fetchAllCharacters, fetchCharactersStats} from './store/index.js'
 
 
@@ -60,9 +60,6 @@ class Game extends Component {
     return (
 
       <div className="Game">
-        <header className="Game-header">
-          <h1 className="Game-title">Welcome to CopyCat Attack Calculator</h1>
-        </header>
         <form onSubmit={this.handleAttackSubmit} id="attack-form">
           <div className="input-column">
             <p className="input-text">Input Character Class:</p>

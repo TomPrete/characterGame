@@ -18,22 +18,9 @@ export function createNewCharacter(character_type, name, strength, level, vitali
   switch (character_type) {
     case "warrior":
       return new Warrior(name, strength, level, vitality, armor)
-      break;
 
-    // case ("characterClass2"):
-    //   return new characterClass2(name, strength, level, vitality, armor)
-    //   break;
-    // case ("characterClass3"):
-    //   return new characterClass3(name, strength, level, vitality, armor)
-    //   break;
-    // case ("characterClass4"):
-    //   return new characterClass4(name, strength, level, vitality, armor)
-    //   break;
-    // case ("characterClass5"):
-    //   return new characterClass5(name, strength, level, vitality, armor)
-    //   break;
-    // case ("characterClass6"):
-    //   return new characterClass6(name, strength, level, vitality, armor)
+    //Input addtional 'cases' for each Character Type (Class)
+
     default:
     console.log("That character doesn't exist!");
   }

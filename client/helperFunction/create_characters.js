@@ -53,7 +53,6 @@ Warrior.prototype.attack = function (charLevel, weapon, wepDamage, char_str, wep
       'dps': weaponDPS
     }
   }
-  console.log("Attack Values: ", attackValues)
   return attackValues
 }
 
@@ -65,14 +64,3 @@ Warrior.prototype.levelUp = function () {
   this.vitality += 5
 }
 
-
-//TEST FUNCTION FOR GAME COMPONENT
-export function testAttackData(charType, level, weapon, wepDamage, char_str, wepElemPct, elemType, weaponData, attackData) {
-  if (charType.toLowerCase() === "warrior") {
-    return Warrior.prototype.attack(level, weapon, wepDamage, char_str, wepElemPct, elemType, weaponData, attackData)
-  }
-  //Input additional Character Types here for the test data
-  else {
-    return "ERROR: No Character Information Exists"
-  }
-}
