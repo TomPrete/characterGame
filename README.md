@@ -13,7 +13,7 @@ Depending on what Character Type you choose for the Attack calculation (Warrior,
 
 I created a Warrior constructor function that takes in arguments defined when initially creating a new character, but we aren't creating a new character in this excercise. There will be a constructor function for each character type (Character Class). Each constructor function will have at least an attack method and a level up method. I decided to have a different constructor function for each character type instead of a single Character constructor function because depending on game mechanics I'm leaving each Character to have uniquely defined characteristics.
 
-The Attack Method takes in numerous input arguments, tests to ensure the inputs meet each input specification, and returns an Object of the different Attacks along with the Min, Max, and Avg.DPS.
+The Attack Method takes in numerous input arguments, tests to ensure the inputs meet each input specification, and returns an object of the different Attacks along with the Min, Max, and Avg.DPS.
 
 The LevelUp Method increases the specific Character's level, strength, and vitality. Each Character Type will have a unique LevelUp method since leveling up my impact each Character Type differently.
 
