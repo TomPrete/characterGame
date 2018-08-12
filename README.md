@@ -30,6 +30,7 @@ I then deleted most of the unnecessary dependencies.
 ## Setup
 
 npm install
+
 npm run start
 
 
