@@ -76,6 +76,10 @@ body {
   background-color: white;
 }
 
+::placeholder {
+  color: rgb(194, 194, 194)
+}
+
 button {
   font-family: 'Quicksand';
   margin: 10px 0;

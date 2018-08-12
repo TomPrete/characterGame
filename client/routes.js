@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import './index.css'
-
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import Game from './Game'
 import store, {fetchAllCharacters} from './store'
