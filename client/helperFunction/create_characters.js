@@ -25,7 +25,7 @@ Warrior.prototype.attack = function (charLevel, weapon, wepDamage, char_str, wep
   let str = Number(char_str) / 100
   let elemPCT = (Number(wepElemPct) / 100)
   let weaponAPS = 1
-  if ((level > 90 || level < 1) || (wepDamage[0] > wepDamage[1]) || (elemPCT > .15) || (elemPCT < .05 && elemPCT > 0) || (elemPCT < 0)) {
+  if ((level > 90 || level < 1) || (wepDamage[0] > wepDamage[1]) || (wepDamage[0] < 1 || wepDamage[1] < 1)|| (elemPCT > .15) || (elemPCT < .05 && elemPCT > 0) || (elemPCT < 0) || str < 0) {
     return "ERROR: Check input data parameters. You may be outside the allowed range."
   }
   for (let key in weaponData) {
@@ -33,7 +33,6 @@ Warrior.prototype.attack = function (charLevel, weapon, wepDamage, char_str, wep
       weaponAPS = weaponData[key]['aps']
     }
   }
-  console.log('---------| MINIMUM | MAXIMUM |   DPS   |')
   let attackValues = {}
   for (let attack in attackData) {
     let damageArr = []
@@ -45,9 +44,6 @@ Warrior.prototype.attack = function (charLevel, weapon, wepDamage, char_str, wep
     }
     let avgDamage = ((damageArr[0] + damageArr[1]) / 2)
     let weaponDPS = Math.round((weaponAPS * avgDamage * attackData[attack]['percAPS']) * 1000) / 1000
-
-    console.log(' ' + attack.toUpperCase() + '   |   ' + damageArr[0] + "    |  " + damageArr[1] + "     |  " + weaponDPS + "   |")
-    console.log('----------------------------------------')
     attackValues[attack] = {
       'minimum': damageArr[0],
       'maximum': damageArr[1],

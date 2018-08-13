@@ -98,7 +98,7 @@ class Game extends Component {
                 return <option className="input-select" key={weapon} value={weapon}>{weapon.charAt(0).toUpperCase()+weapon.slice(1)}</option>
               })
               :
-            <option className="input-select">No Weapon Exists</option>
+            <option className="input-select">No Weapons Exist</option>
             }
 
             </select>
@@ -134,7 +134,7 @@ class Game extends Component {
             />
           </div>
           <div className="input-column">
-            <p className="input-text">Input Element Type (Physical, Fire, or Ice):</p>
+            <p className="input-text">Input Element Type:</p>
             <select
             name="element"
             className="input-select"
@@ -147,7 +147,7 @@ class Game extends Component {
                 return <option className="input-select" key={element} value={element}>{element.charAt(0).toUpperCase()+element.slice(1)} Damage</option>
               })
               :
-              <option className="input-select">No Element Exists</option>
+              <option className="input-select">No Elements Exist</option>
             }
             </select>
           </div>
