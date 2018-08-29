@@ -80,7 +80,7 @@ export class Game extends Component {
             </select>
           </div>
           <div className="input-column">
-            <p className="input-text">Input Character's Level (1-90):</p>
+            <p className="input-text">Input Character Level (1-90):</p>
             <input
               name="level"
               type="number"
