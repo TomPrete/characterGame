@@ -1,4 +1,4 @@
-# CopyCat Gaming Inc.
+# Character Gaming Inc.
 
 This initial application can easily accomodate additional components, store/state, and API endpoints.
 
