@@ -112,7 +112,7 @@ export class Game extends Component {
             </select>
           </div>
           <div className="input-column">
-            <p className="input-text">Input Weapon's Minimum Damage:</p>
+            <p className="input-text">Input Weapon Minimum Damage:</p>
             <input
               type="number"
               name="minDamage"
@@ -122,7 +122,7 @@ export class Game extends Component {
             />
           </div>
           <div className="input-column">
-            <p className="input-text">Input Weapon's Maximum Damage:</p>
+            <p className="input-text">Input Weapon Maximum Damage:</p>
             <input
               type="number"
               name="maxDamage"
