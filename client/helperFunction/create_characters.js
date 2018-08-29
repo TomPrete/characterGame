@@ -59,7 +59,7 @@ Warrior.prototype.levelUp = function () {
   this.level += 1;
   this.strength += 10;
   this.vitality += 5
-  if (level > 90) {
+  if (this.level > 90) {
     this.level = 90;
     return "Max Level Attained"
   }

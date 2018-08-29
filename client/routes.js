@@ -9,7 +9,6 @@ class Routes extends Component {
     store.dispatch(fetchCharacters)
   }
   render() {
-    // console.log(this.props.characters)
     return (
       <div className="Game">
       <header className="Game-header">

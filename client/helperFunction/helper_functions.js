@@ -1,7 +1,7 @@
 import { Warrior } from './create_characters'
 
 
-//TEST FUNCTION FOR GAME COMPONENT
+//TEST FUNCTION FOR GAME COMPONENT - rename function accordingly
 export function testAttackData(charType, level, weapon, wepDamage, char_str, wepElemPct, elemType, weaponData, attackData) {
   if (charType.toLowerCase() === "warrior") {
     return Warrior.prototype.attack(level, weapon, wepDamage, char_str, wepElemPct, elemType, weaponData, attackData)

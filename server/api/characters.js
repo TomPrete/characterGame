@@ -1,5 +1,4 @@
 const router = require('express').Router()
-// const {User} = require('../db/models')
 const Characters = require('../data/characters')
 module.exports = router
 

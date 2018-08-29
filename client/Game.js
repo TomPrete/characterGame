@@ -1,34 +1,38 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { testAttackData, createNewCharacter } from "./helperFunction/helper_functions.js"
-import store, {fetchAllCharacters, fetchCharactersStats} from './store/index.js'
+import { fetchAllCharacters } from './store/index.js'
 
 
-class Game extends Component {
+export class Game extends Component {
   constructor(props) {
     super(props)
     this.state = {
       results: null,
-      characterClass: "warrior"
+      characterClass: "warrior",
+      characterStats: null
     }
     this.inputCharacterClass = this.inputCharacterClass.bind(this)
     this.handleAttackSubmit = this.handleAttackSubmit.bind(this)
   }
 
 
-  componentDidMount() {
+  async componentWillReceiveProps(nextProps) {
     let char_type = this.state.characterClass
-    const fetchCharacterStats = fetchCharactersStats(char_type)
-    store.dispatch(fetchCharacterStats)
+    await this.setState({
+      characterStats: nextProps.characters[char_type]
+    })
   }
+
 
   async inputCharacterClass(e) {
     await this.setState({
       characterClass: e.target.value
     })
     let char_type = this.state.characterClass
-    const fetchCharacterStats = await fetchCharactersStats(char_type);
-    await store.dispatch(fetchCharacterStats)
+    await this.setState({
+      characterStats: this.props.characters[char_type]
+    })
   }
 
   handleAttackSubmit(e) {
@@ -53,10 +57,6 @@ class Game extends Component {
 
   render() {
     let characters = this.props.characters
-    let charWeapons = this.props.stats['weapons'] ? Object.keys(this.props.stats['weapons']) : 0
-    let weaponElements = this.props.stats["weapons"]? (Object.values(this.props.stats["attacks"])).map(elem => {
-      return elem["elem"]
-    }) : 0
     return (
 
       <div className="Game">
@@ -69,9 +69,13 @@ class Game extends Component {
             onChange={this.inputCharacterClass}
             required>
             {
+              characters
+              ?
               Object.keys(characters).map(character => {
                 return <option className="input-select" key={character} value={character}>{character.charAt(0).toUpperCase()+character.slice(1)}</option>
               })
+              :
+              null
             }
             </select>
           </div>
@@ -92,13 +96,17 @@ class Game extends Component {
               required
             >
             {
-              charWeapons.length
+              this.state.characterStats
               ?
-              charWeapons.map(weapon => {
-                return <option className="input-select" key={weapon} value={weapon}>{weapon.charAt(0).toUpperCase()+weapon.slice(1)}</option>
+              Object.keys(this.state.characterStats['weapons']).length
+              ?
+              Object.keys(this.state.characterStats['weapons']).map(weapon => {
+                  return <option className="input-select" key={weapon} value={weapon}>{weapon.charAt(0).toUpperCase()+weapon.slice(1)}</option>
               })
               :
-            <option className="input-select">No Weapons Exist</option>
+              <option className="input-select">No Weapons Exist</option>
+              :
+              <option className="input-select">No Weapons Exist</option>
             }
 
             </select>
@@ -141,11 +149,18 @@ class Game extends Component {
             required
             >
             {
-              weaponElements.length
+              this.state.characterStats
               ?
-              weaponElements.map(element => {
-                return <option className="input-select" key={element} value={element}>{element.charAt(0).toUpperCase()+element.slice(1)} Damage</option>
+              Object.keys(this.state.characterStats["attacks"]).length
+              ?
+              Object.values(this.state.characterStats["attacks"]).map(attack => {
+                if( attack['elem'] ) {
+                  let element = attack['elem']
+                  return <option className="input-select" key={element} value={element}>{element.charAt(0).toUpperCase()+element.slice(1)} Damage</option>
+                }
               })
+              :
+              <option className="input-select">No Elements Exist</option>
               :
               <option className="input-select">No Elements Exist</option>
             }
@@ -211,11 +226,10 @@ class Game extends Component {
 const mapState = state => {
   return {
     characters: state.characters,
-    stats: state.stats
   }
 }
 
-const mapDispatch = { fetchAllCharacters, fetchCharactersStats }
+const mapDispatch = { fetchAllCharacters }
 
 const GameContainter = connect(mapState, mapDispatch)(Game)
 
